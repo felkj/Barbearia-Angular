@@ -33,4 +33,6 @@ touch src/app/services/api-client/clients/clients.service.ts &&
 touch src/app/services/api-client/clients/client.models.ts &&
 
 touch src/app/services/api-client/schedules/schedules.service.ts &&
-touch src/app/services/api-client/schedules/schedule.models.ts
+touch src/app/services/api-client/schedules/schedule.models.ts &&
+
+npm install @angular/cdk bootstrap ngx-mask

@@ -1,0 +1,7 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <app-client-table [clients]="clients" (onConfirmDelete)="deleteClient($event)" (onRequestUpdate)="updateClient($event)"></app-client-table>
+        </div>
+    </div>
+</div>
