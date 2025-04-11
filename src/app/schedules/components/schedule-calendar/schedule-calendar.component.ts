@@ -2,8 +2,9 @@ import { AfterViewInit, Component, EventEmitter, Inject, Input, OnChanges, OnDes
 import { SERVICES_TOKEN } from '../../../services/service.token';
 import { DialogManagerService } from '../../../services/dialog-manager.service';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { ClientScheduleAppointmentModel, SaveScheduleModel, ScheduleAppointmentMonthModel, SelectClientModel } from '../../schedule.models';
+import { ClientScheduleAppointmentModel, SaveScheduleModel, ScheduleAppointementMonthModel, SelectClientModel } from '../../schedule.models';
 import { FormControl, FormsModule, NgForm } from '@angular/forms';
+import { IDialogManagerService } from '../../../services/idialog-manager.service';
 import { CommonModule } from '@angular/common';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -61,7 +62,7 @@ export class ScheduleCalendarComponent implements OnDestroy, AfterViewInit, OnCh
 
   clientSelectFormControl = new FormControl()
 
-  @Input() monthSchedule!: ScheduleAppointmentMonthModel
+  @Input() monthSchedule!: ScheduleAppointementMonthModel
   @Input() clients: SelectClientModel[] = []
 
   @Output() onDateChange = new EventEmitter<Date>()
@@ -70,7 +71,7 @@ export class ScheduleCalendarComponent implements OnDestroy, AfterViewInit, OnCh
 
   @ViewChild(MatPaginator) paginator!: MatPaginator
 
-  constructor(@Inject(SERVICES_TOKEN.DIALOG) private readonly dialogManagerService: DialogManagerService) { }
+  constructor(@Inject(SERVICES_TOKEN.DIALOG) private readonly dialogManagerService: IDialogManagerService) { }
 
   get selected(): Date {
     return this._selected
@@ -122,7 +123,6 @@ export class ScheduleCalendarComponent implements OnDestroy, AfterViewInit, OnCh
   }
 
   requestDelete(schedule: ClientScheduleAppointmentModel) {
-    
     this.subscription = this.dialogManagerService.showYesNoDialog(
       YesNoDialogComponent,
       { title: 'Exclusão de agendamento', content: 'Confirma a exclusão do agendamento?' }
@@ -138,9 +138,7 @@ export class ScheduleCalendarComponent implements OnDestroy, AfterViewInit, OnCh
     })
   }
 
-  onTimeChange(time: Date | null) {
-    if (!time) return;
-  
+  onTimeChange(time: Date) {
     const endAt = new Date(time)
     endAt.setHours(time.getHours() + 1)
     this.newSchedule.endAt = endAt

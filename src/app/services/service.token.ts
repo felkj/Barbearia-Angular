@@ -1,14 +1,14 @@
 import { InjectionToken } from "@angular/core";
-import { IClientService } from "./api-client/clients/iclients.service";
-import { ISnackbarManegerService } from "./isnackbar-maneger.service";
-import { IDialogManegerService } from "./idialog-maneger.service";
-import { IScheduleService } from "./api-client/schedules/ischedule.service";
+import { ICLientService } from "./api-client/clients/iclients.service";
+import { ISnackbarManagerService } from "./isnackbar-manager.service";
+import { IDialogManagerService } from "./idialog-manager.service";
+import { IScheduleService } from "./api-client/schedules/ischedules.service";
 
-export const SERVICES_TOKEN ={
+export const SERVICES_TOKEN = {
     HTTP: {
-        CLIENT: new InjectionToken<IClientService>('SERVICES_TOKEN.HTTP.CLIENT'),
-        SCHEDULE:new InjectionToken<IScheduleService>('SERVICES_TOKEN.HTTP.SCHEDULE')
+        CLIENT: new InjectionToken<ICLientService>('SERVICES_TOKEN.HTTP.CLIENT'),
+        SCHEDULE: new InjectionToken<IScheduleService>('SERVICES_TOKEN.HTTP.SCHEDULE'),
     },
-    SNACKBAR: new InjectionToken<ISnackbarManegerService>('SERVICES_TOKEN.SNACKBAR'),
-    DIALOG: new InjectionToken<IDialogManegerService>('SERVICES_TOKEN.DIALOG')
+    SNACKBAR: new InjectionToken<ISnackbarManagerService>('SERVICES_TOKEN.SNACKBAR'),
+    DIALOG: new InjectionToken<IDialogManagerService>('SERVICES_TOKEN.DIALOG')
 }

@@ -1,13 +1,13 @@
-import { Component, Inject, InjectionToken, OnDestroy, OnInit } from '@angular/core';
-import { IClientService } from '../../services/api-client/clients/iclients.service';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { ICLientService } from '../../services/api-client/clients/iclients.service';
 import { SERVICES_TOKEN } from '../../services/service.token';
 import { ClientsService } from '../../services/api-client/clients/clients.service';
-import { ClientTableComponent } from "../components/client-table/client-table.component";
 import { SnackbarManagerService } from '../../services/snackbar-manager.service';
-import { ISnackbarManegerService } from '../../services/isnackbar-maneger.service';
+import { ISnackbarManagerService } from '../../services/isnackbar-manager.service';
 import { Subscription } from 'rxjs';
 import { ClientModelTable } from '../client.models';
 import { Router } from '@angular/router';
+import { ClientTableComponent } from '../components/client-table/client-table.component';
 
 @Component({
   selector: 'app-list-clients',
@@ -16,21 +16,20 @@ import { Router } from '@angular/router';
   styleUrl: './list-clients.component.scss',
   providers: [
     { provide: SERVICES_TOKEN.HTTP.CLIENT, useClass: ClientsService },
-    { provide: SERVICES_TOKEN.SNACKBAR, useClass: SnackbarManagerService },
+    { provide: SERVICES_TOKEN.SNACKBAR, useClass: SnackbarManagerService }
   ]
 })
-export class ListClientsComponent implements OnInit, OnDestroy{
+export class ListClientsComponent implements OnInit, OnDestroy {
 
-  private httpSubscriptions: Subscription[] =[]
+  private httpSubscriptions: Subscription[] = []
 
   clients: ClientModelTable[] = []
 
   constructor(
-    @Inject(SERVICES_TOKEN.HTTP.CLIENT)private readonly httpService: IClientService,
-    @Inject(SERVICES_TOKEN.SNACKBAR)private readonly snackBarManeger: ISnackbarManegerService,
+    @Inject(SERVICES_TOKEN.HTTP.CLIENT) private readonly httpService: ICLientService,
+    @Inject(SERVICES_TOKEN.SNACKBAR) private readonly snackBarManager: ISnackbarManagerService,
     private readonly router: Router
-  ){ } 
-
+  ) { }
 
   ngOnInit(): void {
     this.httpSubscriptions.push(this.httpService.list().subscribe(data => this.clients = data))
@@ -39,14 +38,14 @@ export class ListClientsComponent implements OnInit, OnDestroy{
     this.httpSubscriptions.forEach(s => s.unsubscribe())
   }
 
-  updateClient(client: ClientModelTable) {
+  update(client: ClientModelTable) {
     this.router.navigate(['clients/edit-client', client.id])
   }
-  deleteClient(client: ClientModelTable) {
+
+  delete(client: ClientModelTable) {
     this.httpSubscriptions.push(
-      this.httpService.delete(client.id).subscribe(_ => this.snackBarManeger.show(`O cliente ${client.name} foi excluido com sucesso!`)))
+      this.httpService.delete(client.id).subscribe(_ => this.snackBarManager.show(`O cliente ${client.name} foi excluido com sucesso`))
+    )
   }
 
 }
-
-

@@ -1,15 +1,15 @@
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { ScheduleCalendarComponent } from '../components/schedule-calendar/schedule-calendar.component';
 import { SERVICES_TOKEN } from '../../services/service.token';
+import { IScheduleService } from '../../services/api-client/schedules/ischedules.service';
+import { ICLientService } from '../../services/api-client/clients/iclients.service';
+import { ISnackbarManagerService } from '../../services/isnackbar-manager.service';
 import { SchedulesService } from '../../services/api-client/schedules/schedules.service';
 import { ClientsService } from '../../services/api-client/clients/clients.service';
 import { SnackbarManagerService } from '../../services/snackbar-manager.service';
 import { Subscription } from 'rxjs';
-import { ClientScheduleAppointmentModel, SaveScheduleModel, ScheduleAppointmentMonthModel, SelectClientModel } from '../schedule.models';
+import { ClientScheduleAppointmentModel, SaveScheduleModel, ScheduleAppointementMonthModel, SelectClientModel } from '../schedule.models';
 import { SaveScheduleRequest } from '../../services/api-client/schedules/schedule.models';
-import { IScheduleService } from '../../services/api-client/schedules/ischedule.service';
-import { IClientService } from '../../services/api-client/clients/iclients.service';
-import { ISnackbarManegerService } from '../../services/isnackbar-maneger.service';
 
 @Component({
   selector: 'app-schedules-month',
@@ -27,13 +27,13 @@ export class SchedulesMonthComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = []
   private selectedDate?: Date
 
-  monthSchedule!: ScheduleAppointmentMonthModel
+  monthSchedule!: ScheduleAppointementMonthModel
   clients: SelectClientModel[] = []
 
   constructor(
     @Inject(SERVICES_TOKEN.HTTP.SCHEDULE) private readonly httpService: IScheduleService,
-    @Inject(SERVICES_TOKEN.HTTP.CLIENT) private readonly clientHttpService: IClientService,
-    @Inject(SERVICES_TOKEN.SNACKBAR) private readonly snackbarManage: ISnackbarManegerService
+    @Inject(SERVICES_TOKEN.HTTP.CLIENT) private readonly clientHttpService: ICLientService,
+    @Inject(SERVICES_TOKEN.SNACKBAR) private readonly snackbarManage: ISnackbarManagerService
   ) { }
 
   ngOnInit(): void {

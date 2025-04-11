@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "barber-shop-api": {
+    "barber-shop-ui": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/barber-shop-api",
+            "outputPath": "dist/barber-shop-ui",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -36,9 +36,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -68,10 +66,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "barber-shop-api:build:production"
+              "buildTarget": "barber-shop-ui:build:production"
             },
             "development": {
-              "buildTarget": "barber-shop-api:build:development"
+              "buildTarget": "barber-shop-ui:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -96,6 +94,7 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/azure-blue.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": []

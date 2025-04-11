@@ -5,7 +5,7 @@ export interface ClientModelForm {
     phone: string
 }
 
-export interface ClientModelTable{
+export interface ClientModelTable {
     id: number
     name: string
     email: string

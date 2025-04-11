@@ -1,59 +1,101 @@
-# BarberShopApi
+<!--START_SECTION:header-->
+<div align="center">
+  <p align="center">
+    <img 
+      alt="DIO Education" 
+      src="https://raw.githubusercontent.com/digitalinnovationone/template-github-trilha/main/.github/assets/logo.webp" 
+      width="100px" 
+    />
+    <h1>barber-shop-ui</h1>
+  </p>
+</div>
+<!--END_SECTION:header-->
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
+<p align="center">
+  <img src="https://img.shields.io/static/v1?label=DIO&message=Education&color=E94D5F&labelColor=202024" alt="DIO Project" />
+  <a href="NIVEL"><img  src="https://img.shields.io/static/v1?label=Nivel&message=Basico&color=E94D5F&labelColor=202024" alt="Nivel"></a>
 
-## Development server
+</p>
 
-To start a local development server, run:
+<!--  -->
+<table align="center">
+<thead>
+  <tr>
+    <td>
+        <p align="center">Expert</p>
+        <a href="https://github.com/juniorjrjl">
+        <img src="https://avatars.githubusercontent.com/u/6619093?u=0afe982a654793dfc9e886acab8b417aa632f511&v=4" alt="@felipeAguiarCode"><br>
+      </a>
+    </td>
+    <td colspan="3">
+    <p>🎉 10y+ em desenvolvimento Backend (Principalmente com Java mas já atuei com Scala, Python, Kotlin).
+      <br/>
+     🌟 Desenvolvedor backend - CAJU
+      <br/>
+    👨‍💻 Foco em back-ends
+    </p>
+      <a 
+      href="https://www.linkedin.com/in/josé-luiz-abreu-cardoso-junior-18483872/" 
+      align="center">
+           <img 
+            align="center" 
+            alt="Material de Apoio" 
+            src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"
+            >
+        </a>
+        <a href="https://www.instagram.com/junior.jose.lz/" target="_blank">
+            <img 
+              align="center" 
+              alt="Instagram" 
+              src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"
+            >
+        </a>
+    </td>
+  </tr>
+</thead>
+</table>
+<!--  -->
 
-```bash
-ng serve
-```
+<br/>
+<br/>
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 💻 Sobre o Projeto
 
-## Code scaffolding
+Vamos criar um projeto Angular para agendamento de atendimento em uma barbearia, vamos usar a lib do Material e assim explorar alguns conceitos do framework Angular
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📚 Pré-requisitos de Habilidades e Níveis de Conhecimento
 
-```bash
-ng generate component component-name
-```
+Antes de ingressar neste conteúdo, é necessário possuir conhecimento prévio nas seguintes áreas:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+  - Javascript | Intermediário
+  - Typescript | Intermediário
+  - HTML | Intermediário
+  - CSS | Intermediário
+  - Docker | Básico (opcional)
+  - Docker Compose | Básico (opcional)
 
-```bash
-ng generate --help
-```
+## 🛠️ Habilidades e Sub-habilidades que vamos aprender neste conteúdo
 
-## Building
+  - Frontend
+    - Consumo de Api Rest
+    - Comunicação com backend
+    - Componentização
 
-To build the project run:
+## 🎯 Objetivos e Resultados Esperados
 
-```bash
-ng build
-```
+Após a conclusão do curso/projeto, os estudantes estarão aptos a:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- Criar um projeto Angular.
+- Consumir API Rest.
+- Componentizar para reaproveitar e organizar o projeto
 
-## Running unit tests
+<!--START_SECTION:footer-->
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+<br />
+<br />
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+<p align="center">
+  <a href="https://www.dio.me/" target="_blank">
+    <img align="center" src="https://raw.githubusercontent.com/digitalinnovationone/template-github-trilha/main/.github/assets/footer.png" alt="banner"/>
+  </a>
+</p>

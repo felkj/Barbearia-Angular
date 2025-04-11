@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
+import { IScheduleService } from './ischedules.service';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../../environments/environments';
-import { IScheduleService } from './ischedule.service';
 import { SaveScheduleRequest, SaveScheduleResponse, ScheduleAppointmentMonthResponse } from './schedule.models';
+import { environment } from '../../../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'

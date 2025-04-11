@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { IDialogManegerService } from './idialog-maneger.service';
-import { ComponentType } from '@angular/cdk/overlay';
+import { IDialogManagerService } from './idialog-manager.service';
+import { ComponentType } from '@angular/cdk/portal';
 import { Observable } from 'rxjs';
 import { YesNoDialogComponent } from '../commons/components/yes-no-dialog/yes-no-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -8,7 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 @Injectable({
   providedIn: 'root'
 })
-export class DialogManagerService implements IDialogManegerService{
+export class DialogManagerService implements IDialogManagerService {
 
   constructor(private readonly dialog: MatDialog) { }
 
@@ -17,6 +17,7 @@ export class DialogManagerService implements IDialogManegerService{
       width: '400px',
       data
     })
+
     return dialogRef.afterClosed()
   }
 }
